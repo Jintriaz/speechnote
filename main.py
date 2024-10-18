@@ -79,7 +79,7 @@ def main():
         if note_input:
             add_note(note_input)
             st.success("Notiz erfolgreich gespeichert.")
-            st.experimental_rerun()  # Seite neu laden, um die Änderungen zu zeigen
+            st.rerun()  # Seite neu laden, um die Änderungen zu zeigen
         else:
             st.warning("Bitte geben Sie eine Notiz ein.")
 
@@ -109,7 +109,7 @@ def main():
             if st.button(f"Notiz {index + 1} löschen", key=f"delete_{index}"):
                 delete_note(index)
                 st.success("Notiz erfolgreich gelöscht.")
-                st.experimental_rerun()  # Seite neu laden, um die Änderungen zu zeigen
+                st.rerun()  # Seite neu laden, um die Änderungen zu zeigen
 
         # Temporäre Audio-Datei löschen
         if os.path.exists(audio_file_path):
